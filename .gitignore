@@ -21,3 +21,5 @@ _dump/
 _test*.mjs
 *.bak
 *.tmp
+
+dist/
