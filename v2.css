@@ -1,0 +1,138 @@
+/* 命运编织者 · Ananke v2 — UI 样式 */
+
+.ananke-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    z-index: 30000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ananke-panel {
+    width: min(780px, 94vw);
+    max-height: 86vh;
+    overflow: auto;
+    background: #1c1a17;
+    color: #e8dcc0;
+    border: 1px solid #6b5a3e;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
+}
+
+.ananke-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.ananke-title { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+.ananke-ver { color: #8f7f63; font-size: 12px; }
+.ananke-close { margin-left: auto; }
+
+.ananke-status {
+    padding: 8px 10px;
+    background: rgba(255, 220, 150, .06);
+    border: 1px solid #4a3f2e;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.ananke-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.ananke-grid label { display: flex; flex-direction: column; gap: 4px; color: #c9bda3; font-size: 13px; }
+.ananke-grid input, .ananke-grid select {
+    background: #12100e;
+    color: #e8dcc0;
+    border: 1px solid #4a3f2e;
+    border-radius: 5px;
+    padding: 6px 8px;
+}
+
+.ananke-check { flex-direction: row !important; align-items: center; gap: 6px !important; }
+
+.ananke-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+
+.ananke-btn {
+    background: #2a241c;
+    color: #e8dcc0;
+    border: 1px solid #6b5a3e;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.ananke-btn:hover { background: #3a3024; border-color: #c9a45c; }
+
+.ananke-logs { max-height: 240px; overflow: auto; border-top: 1px solid #3a3226; padding-top: 8px; }
+.ananke-log { font-size: 12px; line-height: 1.8; color: #b9ad95; }
+.ananke-log.ananke-error { color: #e07a6a; }
+.ananke-log.ananke-warn { color: #d9b45a; }
+
+.ananke-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 48px;
+    transform: translateX(-50%);
+    background: rgba(28, 26, 23, .95);
+    color: #e8dcc0;
+    border: 1px solid #6b5a3e;
+    border-radius: 8px;
+    padding: 8px 16px;
+    z-index: 30001;
+    font-size: 13px;
+}
+
+/* 行动选项栏 */
+.ananke-options {
+    margin-top: 10px;
+    border-top: 1px dashed #8a744f;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ananke-opt {
+    cursor: pointer;
+    padding: 6px 9px;
+    border: 1px solid #6b5a3e;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .03);
+    line-height: 1.6;
+}
+.ananke-opt:hover {
+    background: rgba(255, 220, 150, .12);
+    border-color: #c9a45c;
+}
+
+.ananke-tag { color: #e0b35a; }
+.ananke-diff { color: #9fb0c8; margin-left: 2px; }
+.ananke-desc { color: #efe6d2; }
+
+#ananke-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 96px;
+    z-index: 20000;
+}
+#ananke-fab button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2a241c;
+    color: #e0b35a;
+    border: 1px solid #6b5a3e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
