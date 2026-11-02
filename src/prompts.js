@@ -33,6 +33,10 @@ export function buildT1ClassifyMessages({ name = '', entries = [] }) {
 /** T2 行动选项 + 维护 */
 export function buildT2Messages({ attrs = {}, history = '', taskChain = null, map = null, toggles = {} }) {
     const attrText = Object.entries(attrs).map(([k, v]) => `${k}=${v}`).join('，');
+    const cap = (s, n = 2500) => {
+        const t = String(s || '');
+        return t.length > n ? `${t.slice(0, n)}…` : t;
+    };
     return [
         {
             role: 'system',
@@ -53,8 +57,8 @@ export function buildT2Messages({ attrs = {}, history = '', taskChain = null, ma
             content: [
                 `玩家属性：${attrText}`,
                 `最近剧情：\n${history || '（无）'}`,
-                `当前任务链：${taskChain ? JSON.stringify(taskChain) : '无'}`,
-                `当前地图：${map ? JSON.stringify(map) : '无'}`,
+                `当前任务链：${taskChain ? cap(JSON.stringify(taskChain)) : '无'}`,
+                `当前地图：${map ? cap(JSON.stringify(map)) : '无'}`,
                 `功能开关：${JSON.stringify(toggles)}`,
             ].join('\n\n'),
         },

@@ -54,7 +54,8 @@ function applyTaskUpdate(store, u) {
     }
     const idx = Number(u.当前节点);
     if (Number.isInteger(idx) && idx >= 1 && idx <= events.length) {
-        tc.current = idx;
+        const cur = Number(tc.current) || 0;
+        if (idx > cur) tc.current = idx; // 节点只前进，不回退
         tc.status = '活跃中';
     }
     if (u.节点结果) tc.节点结果 = String(u.节点结果).slice(0, 120);
